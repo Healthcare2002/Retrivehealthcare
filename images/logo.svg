@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .logo-text { font-family: Arial, sans-serif; font-weight: bold; }
+        .main-text { fill: #006D77; }
+        .sub-text { fill: #83C5BE; }
+    </style>
+    <g transform="translate(10, 60)">
+        <text class="logo-text main-text" font-size="48">RETRIVE</text>
+        <text class="logo-text sub-text" x="0" y="30" font-size="24">HEALTH CARE</text>
+    </g>
+</svg> 
