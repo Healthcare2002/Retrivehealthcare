@@ -195,9 +195,25 @@ document.addEventListener('DOMContentLoaded', () => {
 // Mobile Menu Functionality
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links li');
+
+// Add stagger animation delay to nav items
+navItems.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.1}s`;
+});
 
 mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
     navLinks.classList.toggle('active');
+
+    // Close menu when clicking on a link
+    const navLinksItems = navLinks.querySelectorAll('a');
+    navLinksItems.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
     document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
 });
 
@@ -306,4 +322,4 @@ contactForm.addEventListener('submit', async (e) => {
         alert('Error sending message. Please try again.');
         console.error('Error:', error);
     }
-}); 
+});
